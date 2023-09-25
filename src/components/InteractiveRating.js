@@ -6,17 +6,10 @@ import Illustration from "../images/illustration-thank-you.svg";
 function InteractiveRating(props) {
 	const [rating, setRating] = useState(true);
 	const [selected, setSelected] = useState();
-	const [previous, setPrevious] = useState();
-	function changeState(value) {
-		setPrevious(selected);
-		setSelected(value);
-	}
 
 	function getClassName(value) {
 		if (selected == value) {
 			return styles.selected;
-		} else if (previous == value) {
-			return styles.previous;
 		} else {
 			return styles.ratingButton;
 		}
@@ -35,19 +28,19 @@ function InteractiveRating(props) {
 						feedback is appreciated to help us improve our offering!
 					</p>
 					<div className={styles.ratingButtons}>
-						<button className={getClassName(1)} onClick={() => changeState(1)}>
+						<button className={getClassName(1)} onClick={() => setSelected(1)}>
 							1
 						</button>
-						<button className={getClassName(2)} onClick={() => changeState(2)}>
+						<button className={getClassName(2)} onClick={() => setSelected(2)}>
 							2
 						</button>
-						<button className={getClassName(3)} onClick={() => changeState(3)}>
+						<button className={getClassName(3)} onClick={() => setSelected(3)}>
 							3
 						</button>
-						<button className={getClassName(4)} onClick={() => changeState(4)}>
+						<button className={getClassName(4)} onClick={() => setSelected(4)}>
 							4
 						</button>
-						<button className={getClassName(5)} onClick={() => changeState(5)}>
+						<button className={getClassName(5)} onClick={() => setSelected(5)}>
 							5
 						</button>
 					</div>

@@ -79,6 +79,8 @@ p {
 
 .ratingButton:hover {
   cursor: pointer;
+  background-color: var(--medium-gray);
+  color: var(--white);
 }
 
 .selected {
